@@ -1,0 +1,39 @@
+# Функция для преобразования матрицы
+def transform_matrix(matrix):
+    n = len(matrix)  # Размер матрицы (квадратная матрица)
+    
+    # Преобразуем все отрицательные элементы в нули, а положительные - в единицы
+    for i in range(n):
+        for j in range(n):
+            if matrix[i][j] < 0:
+                matrix[i][j] = 0
+            else:
+                matrix[i][j] = 1
+                
+    return matrix
+
+# Функция для вывода нижней треугольной матрицы
+def print_lower_triangle(matrix):
+    n = len(matrix)
+    for i in range(n):
+        for j in range(n):
+            # Выводим только элементы, находящиеся на или ниже главной диагонали
+            if i >= j:
+                print(matrix[i][j], end=" ")
+            else:
+                print(" ", end=" ")  # Печатаем пробелы для верхней части
+        print()  # Переходим на новую строку после каждой строки матрицы
+
+# Пример использования
+matrix = [
+    [3, -2, 1],
+    [-5, 6, 0],
+    [7, -4, -8]
+]
+
+# Преобразуем матрицу
+transformed_matrix = transform_matrix(matrix)
+
+# Выводим нижнюю треугольную матрицу
+print("Нижняя треугольная матрица:")
+print_lower_triangle(transformed_matrix)
