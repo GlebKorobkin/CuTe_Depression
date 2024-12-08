@@ -1,0 +1,30 @@
+# Подпрограмма для нахождения НОД по алгоритму Евклида
+def gcd(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+# Основная программа для деления дробей
+def divide_fractions(A, B, C, D):
+    # Выполняем деление: (A / B) / (C / D) = (A * D) / (B * C)
+    numerator = A * D
+    denominator = B * C
+    
+    # Находим НОД числителя и знаменателя
+    common_divisor = gcd(numerator, denominator)
+    
+    # Приводим дробь к несократимому виду
+    numerator //= common_divisor
+    denominator //= common_divisor
+    
+    return numerator, denominator
+
+# Пример использования
+A = 3
+B = 4
+C = 5
+D = 6
+
+numerator, denominator = divide_fractions(A, B, C, D)
+
+print(f"Результат деления: {numerator}/{denominator}")
