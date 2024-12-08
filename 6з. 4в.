@@ -1,0 +1,16 @@
+def replace_and_count(s):
+    # Подсчитываем количество замен
+    count = s.count('а')
+    # Заменяем буквы
+    s_modified = s.replace('а', 'о')
+    # Подсчитываем количество символов в строке
+    length = len(s)
+    return s_modified, count, length
+
+# Пример использования
+input_string = "Пример строки с буквой а"
+modified_string, replacements, string_length = replace_and_count(input_string)
+
+print(f"Измененная строка: {modified_string}")
+print(f"Количество замен: {replacements}")
+print(f"Количество символов в строке: {string_length}")
