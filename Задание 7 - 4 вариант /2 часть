@@ -1,0 +1,20 @@
+def find_odd_numbers(arr):
+    # Отбираем только нечетные числа
+    odd_numbers = [num for num in arr if num % 2 != 0]
+    
+    # Проверяем, есть ли нечетные числа
+    if not odd_numbers:
+        return "Нет нечетных чисел"
+    
+    # Сортируем полученный массив по убыванию
+    odd_numbers.sort(reverse=True)
+    return odd_numbers
+
+# Пример использования
+arr = [4, 1, 7, 8, 3, 2, 5]
+result = find_odd_numbers(arr)
+
+if isinstance(result, str):
+    print(result)  # Если нет нечетных чисел
+else:
+    print(f"Массив нечетных чисел, отсортированный по убыванию: {result}")
