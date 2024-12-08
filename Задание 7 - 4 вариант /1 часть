@@ -1,1 +1,13 @@
+def find_max_and_index(arr):
+    # Находим максимальный элемент массива
+    max_value = max(arr)
+    # Находим индекс максимального элемента
+    max_index = arr.index(max_value)
+    return max_value, max_index
 
+# Пример использования
+arr = [3, 1, 7, 9, 5, 9, 2]
+max_element, index = find_max_and_index(arr)
+
+print(f"Максимальный элемент: {max_element}")
+print(f"Порядковый номер (индекс) максимального элемента: {index}")
