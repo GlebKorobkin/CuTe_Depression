@@ -1,0 +1,6 @@
+def sum_of_digits(N):
+    total_sum = 0
+    while N > 0:
+        total_sum += N % 10  # извлекаем последнюю цифру
+        N //= 10  # убираем последнюю цифру из числа
+    return total_sum
