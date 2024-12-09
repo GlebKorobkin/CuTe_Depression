@@ -1,0 +1,20 @@
+# Рекурсивная функция для проверки простоты числа
+def is_prime(n, div=2):
+    # Если делитель больше квадратного корня из n, то n простое
+    if div > math.isqrt(n):
+        return True
+    # Если n делится на div, то число составное
+    if n % div == 0:
+        return False
+    # Иначе проверяем следующее возможное деление
+    return is_prime(n, div + 1)
+
+# Основная функция
+def check_prime(n):
+    if n <= 1:
+        return "NO"
+    return "YES" if is_prime(n) else "NO"
+
+# Пример использования
+n = int(input())  # Ввод числа
+print(check_prime(n))  # Вывод результата
