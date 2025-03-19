@@ -1,0 +1,44 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] memory = new int[3]; 
+        Arrays.fill(memory, 0); 
+
+        while (true) {
+            System.out.print("Введите число (или 'exit' для выхода): ");
+            String input = scanner.next();
+
+            if (input.equalsIgnoreCase("exit")) {
+                break; 
+            }
+
+            int number = Integer.parseInt(input); 
+
+            boolean hasEmptyCell = false;
+            for (int i = 0; i < memory.length; i++) {
+                if (memory[i] == 0) {
+                    memory[i] = number; 
+                    hasEmptyCell = true;
+                    break;
+                }
+            }
+
+            if (!hasEmptyCell) {
+                int minIndex = 0;
+                for (int i = 1; i < memory.length; i++) {
+                    if (memory[i] < memory[minIndex]) {
+                        minIndex = i; 
+                    }
+                }
+                memory[minIndex] = number;
+            }
+
+            System.out.println("Текущее состояние: " + Arrays.toString(memory));
+        }
+
+        scanner.close();
+    }
+}
