@@ -1,0 +1,18 @@
+public class Main {
+    public static void main(String[] args) {
+        String firstStr = "abc";
+        String secondStr = "bc";
+        
+        boolean result = isEnding(firstStr, secondStr);
+        System.out.println(result); 
+    }
+
+    public static boolean isEnding(String firstStr, String secondStr) {
+        if (secondStr.length() > firstStr.length()) {
+            return false; 
+        }
+      
+        String ending = firstStr.substring(firstStr.length() - secondStr.length());
+        return ending.equals(secondStr);
+    }
+}
