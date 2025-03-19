@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String input = "abc abc ab abc ab acs acs"; 
+        String[] words = input.split(" "); 
+
+        Set<String> uniqueWords = new LinkedHashSet<>(Arrays.asList(words));
+
+        StringBuilder result = new StringBuilder();
+        for (String word : uniqueWords) {
+            result.append(word).append(" ");
+        }
+
+        String finalResult = result.toString().trim();
+        System.out.println(finalResult); 
+    }
+}
